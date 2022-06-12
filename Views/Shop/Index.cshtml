@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShopGiay.Models.Giay>
+
+@{ 
+    ViewData["Title"] = "Shop";
+}
+
+<h2 class="my-4">Cửa hàng</h2>
+
+<form asp-action="Index" class="col-2 my-1 p-2">
+    <div>
+        <div class="my-1">
+            <input type="text" name="searchString" placeholder="Tìm kiếm..." class="form-control-sm col-12" />
+        </div>
+        <input type="submit" value="Tìm kiếm" class="btn btn-primary btn-sm" />
+    </div>
+</form>
+
+<vc:genre-navigation/>
+
+<div class="row">
+    @foreach (var giay in Model)
+    {
+        <div class="col-3">
+            <div class="card my-2 shop-card">
+                <a class="a-box" asp-controller="Shop" asp-action="Details" asp-route-id="@giay.Id">
+                    <img src ="@giay.Image" class="card-img-top card-img-custom" />
+                    <div class="card-body" style="height:6em;">
+                        <h5 class="mb-3">@giay.Title</h5>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-text">@giay.Price.ToString("c")</span>
+                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@giay.Id" class="btn btn-primary shop-btn"><i class="fa-solid fa-cart-plus"></i></a> 
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>

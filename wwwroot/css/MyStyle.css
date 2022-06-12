@@ -1,0 +1,38 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.a-box {
+    color: inherit;
+}
+
+    .a-box:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+.card-img-custom:hover {
+    object-fit: cover;
+}
+
+.shop-card {
+    transition: all 0.2s ease;
+}
+
+    .shop-card:hover {
+        transform: scale(1.03);
+        box-shadow: black 2px 5px 5px 2px;
+    }
+
+.display-4 {
+    text-shadow: 2px 5px #fff;
+    font-weight: 800;
+}
+
+h2.my-4 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+}

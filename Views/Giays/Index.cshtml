@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ShopGiay.Models.Giay>
+
+
+<h1>ADMIN</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"> <i class="fa-solid fa-circle-plus"></i> Tạo mới  </a>
+</p>
+<form asp-controller="Giays" asp-action="Index" method="get" class="col-2 my-1 p-2">
+    <div>
+        <div class="my-1">
+            <input type="text" name="searchString" placeholder="Tìm kiếm..." class="form-control-sm col-12" />
+        </div>
+        <input type="submit" value="Tìm kiếm" class="btn btn-primary btn-sm" />
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <img src="@item.Image" class="card-img-top " style="height:250px; width:230px" />
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+﻿@model Order
+
+<form asp-action="Checkout" method="post" class="form-horizontal" role="form">
+    <h4>Vui lòng xác nhận mua hàng của bạn</h4>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group"></div>
+    <div class="col-md-offset-2 col-md-5">
+        <input type="submit" class="btn btn-primary" value="Đặt hàng" /> 
+    </div>
+</form>
