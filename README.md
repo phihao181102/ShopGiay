@@ -17,4 +17,4 @@
 1. Thêm, xóa, sửa
 2. Tìm kiếm sản phẩm theo tên
 5. Lọc theo thể loại sản phẩm
-![image](Admin.png)
+![image](image/Admin.png)
