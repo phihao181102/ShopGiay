@@ -1,6 +1,6 @@
 # Đây là một dự án về shop bán giày
 # Trang chủ
-![image](img/Trangchu.jpg)
+![image](img/Trangchu.png)
 # Các công nghệ sử dụng trong dự án:
 1. Asp.net core MVC
 2. Bootstrap
